@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NR01 - Avaliação Ocupacional</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>NR01 - Avaliação Ocupacional</h2>
+      <button id="startBtn">Iniciar Avaliação</button>
+    </header>
+
+    <div id="quiz" class="hidden">
+      <div id="questionBox">
+        <p id="questionText"></p>
+        <ul id="optionsList"></ul>
+      </div>
+      <div class="controls">
+        <button id="prevBtn">Anterior</button>
+        <button id="nextBtn">Próxima</button>
+      </div>
+    </div>
+
+    <div id="results" class="hidden">
+      <h3>Resultado da Avaliação</h3>
+      <div id="summary"></div>
+      <button id="restartBtn">Refazer</button>
+    </div>
+  </div>
+
+  <script src="script.js"></>
+</html>
 
