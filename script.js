@@ -1,20 +1,11 @@
-// script.js
-
 const questions = [
-  {
-    text: "Com que frequência você sente estresse excessivo no ambiente de trabalho?",
-    options: ["Nunca", "Às vezes", "Frequentemente", "Sempre"]
-  },
-  {
-    text: "Você se sente apoiado(a) psicologicamente pela liderança?",
-    options: ["Totalmente", "Parcialmente", "Pouco", "Nada"]
-  },
-  // ... Adicione as outras 33 perguntas aqui seguindo o mesmo formato
+  { text: "Com que frequência você sente estresse excessivo no ambiente de trabalho?", options: ["Nunca", "Às vezes", "Frequentemente", "Sempre"] },
+  { text: "Você se sente apoiado(a) psicologicamente pela liderança?", options: ["Totalmente", "Parcialmente", "Pouco", "Nada"] },
+  // ... (adicione todas as outras perguntas aqui conforme necessário)
 ];
 
 let currentQuestion = 0;
 const responses = new Array(questions.length);
-
 const startBtn = document.getElementById("startBtn");
 const quiz = document.getElementById("quiz");
 const questionText = document.getElementById("questionText");
@@ -76,4 +67,15 @@ function showResults() {
 
 restartBtn.addEventListener("click", () => {
   location.reload();
+});
+
+document.getElementById("exportBtn").addEventListener("click", () => {
+  const wb = XLSX.utils.book_new();
+  const data = questions.map((q, i) => ({
+    Pergunta: q.text,
+    Resposta: q.options[responses[i]] || "Não respondida"
+  }));
+  const ws = XLSX.utils.json_to_sheet(data);
+  XLSX.utils.book_append_sheet(wb, ws, "Respostas");
+  XLSX.writeFile(wb, "avaliacao_ocupacional.xlsx");
 });
