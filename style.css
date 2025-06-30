@@ -1,1 +1,57 @@
 
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #005bb5;
+}
+.hidden {
+  display: none;
+}
+#questionBox {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+#optionsList {
+  list-style: none;
+  padding: 0;
+}
+#optionsList li {
+  margin-bottom: 0.5rem;
+}
+.controls {
+  text-align: center;
+}
+#results {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+#summary {
+  margin-top: 1rem;
+}
